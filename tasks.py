@@ -355,5 +355,5 @@ class Tasks:
 
 if __name__ == "__main__":
     tasks = Tasks()
-    # tasks.difference_equation()
+    tasks.difference_equation()
     tasks.dynamics()

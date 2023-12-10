@@ -7,7 +7,8 @@
 \usepackage{multicol}
 \usepackage{amssymb}
 \usepackage{amsmath}
-%\usepackage{multline}
+
+\DeclareMathOperator\arctanh{arctanh}
 
 \newcommand{\solutionstart}{{\noindent $\square$ \\}}
 \newcommand{\solutionend}{{\noindent $\blacksquare$ \\}}
@@ -29,6 +30,130 @@
 
 
 \section{Решения}
+
+\subsection{}
+\[
+\int \biggl(x + \frac{2}{x}\biggr)^2 dx
+\]
+
+\solutionstart
+\[
+\int \biggl(x + \frac{2}{x}\biggr)^2 dx = \int \biggl(x^2 + 4 + \frac{4}{x^2} \biggr) dx = \frac{x^3}{3} + 4x - \frac{4}{x} + \text{const}
+\]
+\solutionend
+
+\subsection{}
+\[
+\int \frac{dx}{4 x^2 + 1}
+\]
+
+\solutionstart
+\[
+\int \frac{dx}{4 x^2 + 1} = \Biggl\{ u = 2x, du = 2dx \Biggr\} = \frac1{2} \int \frac{du}{u^2 + 1} = \frac1{2} \arctan{2x} + \text{const}
+\]
+\solutionend
+
+
+\subsection{}
+\[
+\int \sin{7x} dx
+\]
+
+\solutionstart
+\[
+\int \sin{7x} dx = -\frac1{7} \cos{7x} + \text{const}
+\]
+
+\solutionend
+
+
+\subsection{}
+\[
+\int \sqrt[5]{2x - 8} dx 
+\]
+
+\solutionstart
+\[
+\int \sqrt[5]{2x - 8} dx = \Biggl\{ u = 2x - 8, du = 2 dx \Biggr\} = \frac1{2} \int \sqrt[5]{u} du = \frac{5 u^{6/5}}{12} = \frac{5 (2x - 8)^{6/5}}{12} + \text{const}
+\]
+\solutionend
+
+\subsection{}
+\[
+\int \sin^3{x} \cos{x} dx 
+\]
+
+\solutionstart
+\[
+\int \sin^3{x} \cos{x} dx = \Biggl\{ u = \sin{x}, du = \cos{x} dx \Biggr\} = \int u^3 du = \frac{\sin^4{x}}{4} + \text{const}
+\]
+\solutionend
+
+\subsection{}
+\[
+\int \exp{x^3} x^2 dx 
+\]
+
+\solutionstart
+\[
+\int \exp(x^3) x^2 dx =  \Biggl\{ u = x^3, du = 3x^2 dx \Biggr\} = \frac1{3} \int \exp(u) du = \frac{\exp{x^3}}{3} + \text{const}
+\]
+\solutionend
+
+\subsection{}
+\[
+\int \sqrt{9 - x^2} dx 
+\]
+
+\solutionstart
+\[
+\int \sqrt{9 - x^2} dx = \Biggl\{ x = 3 \sin{u}, dx = 3 \cos{u} du \Biggr\} = 3 \int 3 \cos^2{u} du = 9 \int \frac{1 + \cos{2u}}{2} du = \frac{9}{2} \int du + \frac{9}{2} \int \cos{2u} du = 
+\]
+\[
+= \frac{9}{2} \arcsin{\frac{x}{3}} + \frac{9}{4} \sin{2u} + \text{const} =  \Biggl\{ \sin{2u} = 2 \sin{u} \cos{u} = 2 \frac{x}{3} \sqrt{1 - \sin^2{u}} = 2 \frac{x}{3} \sqrt{1 - \sin^2{\arcsin{\frac{x}{3}}}} =
+\]
+\[
+= 2 \frac{x}{3} \sqrt{1 - \frac{x^2}{9}} = \frac{2x}{9} \sqrt{9 - x^2} \Bigr\} = \frac{9}{2} \arcsin{\frac{x}{3}} + \frac{x}{2} \sqrt{9 - x^2} + \text{const}
+\]
+\solutionend
+
+
+\subsection{}
+\[
+\int \frac{dx}{x \sqrt{x + 1}}
+\]
+
+\solutionstart
+\[
+\int \frac{dx}{x \sqrt{x + 1}} = \Biggl\{ u = x + 1, du = dx \Biggr\} = \int \frac{du}{(u - 1) \sqrt{u}} = \Biggl\{ t = \sqrt{u}, dt = \frac{du}{2 \sqrt{u}} \Biggr\} = -2 \int \frac{dt}{1 - t^2} = -2 \arctanh \sqrt{x + 1} + \text{const}
+\]
+\solutionend
+
+\subsection{}
+\[
+\int x \sin{x} dx
+\]
+
+\solutionstart
+\[
+\int x \sin{x} dx = \Bigl\{ u = x, du = dx, dv = \sin{x} dx, v = -\cos{x} \Bigr\} = -x \cos{x} + \int \cos{x} dx = \sin{x} - x \cos{x} + \text{const}
+\]
+\solutionend
+
+
+\subsection{}
+\[
+\int (2x - 1) \exp{3x} dx
+\]
+
+\solutionstart
+\[
+\int (2x - 1) \exp{3x} dx = 2 \int \exp{3x} x dx - \int \exp{3x} dx = \Bigl\{ u = x, du = dx, dv = \exp{3x} dx, v = \frac{\exp{3x}}{3} \Bigr\} = 
+\]
+\[
+= 2 \biggl( \frac{x}{3} \exp{3x} - \frac1{3} \int \exp{3x} dx \biggr) - \frac1{3} \exp{3x} = 2 \biggl( \frac{x}{3} \exp{3x} - \frac1{9} \exp{3x} \biggr) - \frac1{3} \exp{3x} = \frac{\exp{3x}}{9} (6 x - 5)
+\]
+\solutionend
 
 \subsection{}
 Исследуйте на устойчивость нулевое решение уравнения:
